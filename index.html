@@ -1,0 +1,106 @@
+<!DOCTYPE html> 
+<html> 
+<!-- The following code has been developed by students and/or researchers.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only.  Any user of this code does so at their own risk. Members of the DIY Stream, FRI, HRI, and The University of Texas system are not liable for anything related to this code.
+ 
+THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
+ 
+ 
+Authors in chronological order of contribution:
+Author 1
+Author 2
+ 
+Further Information:
+https://fri.cns.utexas.edu/community-outreach/high-school-research-initiative
+ 
+Research Educator:
+Timothy Riedel
+triedel@utexas.edu
+ 
+Brief Description of Goal of Code:
+blah, blah, blah,
+ 
+Known Issues:
+blah, blah, blah, blah
+
+References:	
+https://www.w3schools.com/w3css/default.asp
+https://stackoverflow.com/questions/23104582/scaling-an-image-to-fit-on-canvas
+https://cns.utexas.edu/events/research-learning/luxart-microbial-art-workshop	
+-->
+	
+   <head> 
+      <title>HTML5-Canvas</title>  
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="mobile-web-app-capable" content="yes">
+      <link rel="stylesheet" href="w3.css">
+      <link rel="stylesheet" href="w3-colors-flat.css">
+   </head> 
+
+
+<script>
+var docMod = document.lastModified; // loads last modified time stamp into docMod variable
+//alert("This file last modified " + docMod); // generates alert box with last modified time stamp. un-comment out this entire line if you want to use.
+console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
+</script>
+
+
+<style>	
+
+</style>
+
+<body>
+<div id="header" class="w3-container w3-flat-carrot">
+	<h1>Freestyle-Canvas</h1>
+</div>
+	
+<div id="content" class="w3-container">
+	<p>
+	<br>	
+    <canvas id="myCanvas" width=360 height=450 style="border:1px solid #d3d3d3;"></canvas>
+      
+	<script> /* This script initiates the canvas and puts the text on the canvas "myCanvas" */
+				
+		var canvas = document.getElementById('myCanvas');
+        var context = canvas.getContext("2d");
+        context.font = '20pt Calibri';
+        context.fillStyle = "black";
+
+context.clearRect(0, 0, canvas.width, canvas.height);
+
+
+  // --- parameters ---
+  const cx = canvas.width / 2;
+  const cy = canvas.height / 2;
+  const scale = 120;
+  const lineWidthT = 6;
+
+  // --- draw the Letter U ---
+  context.strokeStyle = "#BF5700"; // burnt orange
+  context.lineWidth = 10;
+  context.beginPath();
+  context.moveTo(cx - scale / 2, cy - scale / 1.4); // left vertical
+  context.lineTo(cx - scale / 2, cy + scale / 2);   // down
+  context.lineTo(cx + scale / 2, cy + scale / 2);   // bottom flat
+  context.lineTo(cx + scale / 2, cy - scale / 1.4); // up
+  context.stroke();
+
+  // --- draw the T nested inside ---
+  context.beginPath();
+  // top bar of T
+  context.moveTo(cx - scale / 1.2, cy - scale / 4.2);
+  context.lineTo(cx + scale / 1.2, cy - scale / 4.2);
+  // vertical stem of T
+  context.moveTo(cx, cy - scale / 4.2);
+  context.lineTo(cx, cy + scale / 1);
+  context.stroke();
+    </script>
+		
+	</p>
+</div>
+	
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY!</p>
+</footer>
+
+</body>
+</html>
