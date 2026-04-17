@@ -85,6 +85,8 @@ context.clearRect(0, 0, canvas.width, canvas.height);
   context.stroke();
 
   // --- draw the T nested inside ---
+  context.strokeStyle = "#0029e2"; //makes it blue
+  context.lineWidth = 5 // thinner than og line
   context.beginPath();
   // top bar of T
   context.moveTo(cx - scale / 1.2, cy - scale / 4.2);
